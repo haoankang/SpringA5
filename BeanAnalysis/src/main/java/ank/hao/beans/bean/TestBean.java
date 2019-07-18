@@ -2,15 +2,19 @@ package ank.hao.beans.bean;
 
 public class TestBean {
 
-    TestBean(){
-        System.out.println("TestBean init..");
+    TestBean(String mmm){
+        System.out.println("TestBean init.."+mmm);
     }
 
-    void say(){
+    public void say(){
         System.out.println("TestBean say..");
     }
 
     static void init(){
         System.out.println("TestBean init..");
+    }
+
+    void destory(){
+        System.out.println("TestBean destory..");
     }
 }

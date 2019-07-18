@@ -1,4 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.0.xsd"><!-- end -->
-    <bean id="testBean" class="ank.hao.beans.bean.TestBean" scope="singleton"/>
+
+    <!--<bean id="testBean" class="ank.hao.beans.bean.TestBean" scope="singleton" name="testBean2" abstract="false" destroy-method="destory" init-method="say">-->
+        <!--<constructor-arg value="aaa"/>-->
+    <!--</bean>-->
+    <!--<alias name="testBean2" alias="testBean3"></alias>-->
+    <!--<bean name="parentBean" class="ank.hao.beans.bean.ParentBean" abstract="true"></bean>-->
+    <!--<bean parent="parentBean"></bean>-->
+    <!--<bean class="ank.hao.beans.bean.ChildBean"></bean>-->
+    <!--<bean name="interfaceBean" class="ank.hao.beans.bean.InterfaceBean" abstract="true"></bean>-->
+    <!--<bean class="ank.hao.beans.bean.InterfaceBeanImp" parent="interfaceBean"></bean>-->
+
+    <!--<bean id="autowireBean" class="ank.hao.beans.bean.AutowireBean" autowire="byType"></bean>-->
+    <!--<bean id="testBean3" class="ank.hao.beans.bean.TestBean"></bean>-->
+
+    <!--实例化bean的三种方式-->
+    <!--<bean class="ank.hao.beans.bean.ConstructorBean">-->
+        <!--<constructor-arg value="ccc"></constructor-arg>-->
+    <!--</bean>-->
+    <bean id="testBean4" class="ank.hao.beans.bean.StaticInstantiateBean" factory-method="createInstance" lazy-init="true"/>
+    <!--<bean id="staticInstantiateBean" class="ank.hao.beans.bean.StaticInstantiateBean"></bean>-->
+    <!--<bean id="testBean5" factory-bean="staticInstantiateBean" factory-method="createInstance2"></bean>-->
+
+    <!--依赖注入两种方式-->
+    <bean id="diaBean" class="ank.hao.beans.bean.DIABean">
+        <property name="dibBean" ref="dibBean"></property>
+    </bean>
+    <bean id="dibBean" class="ank.hao.beans.bean.DIBBean">
+        <constructor-arg type="ank.hao.beans.bean.DIABean" ref="diaBean" />
+    </bean>
+
+    <!--查找方法注入-->
+    <bean id="singletonBean" class="ank.hao.beans.bean.SingletonBean">
+        <lookup-method name="" bean="prototypeBean"></lookup-method>
+    </bean>
+    <bean id="prototypeBean" class="ank.hao.beans.bean.PrototypeBean" scope="prototype"/>
 </beans>
