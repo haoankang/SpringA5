@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.0.xsd"><!-- end -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"><!-- end -->
+
+    <context:annotation-config>
+    </context:annotation-config>
+
+    <bean class="ank.hao.beans.MyConfig"/>
 
     <!--<bean id="testBean" class="ank.hao.beans.bean.TestBean" scope="singleton" name="testBean2" abstract="false" destroy-method="destory" init-method="say">-->
         <!--<constructor-arg value="aaa"/>-->
@@ -32,7 +39,15 @@
 
     <!--查找方法注入-->
     <bean id="singletonBean" class="ank.hao.beans.bean.SingletonBean">
-        <lookup-method name="" bean="prototypeBean"></lookup-method>
+        <lookup-method name="createPrototypeBean" bean="prototypeBean"></lookup-method>
     </bean>
     <bean id="prototypeBean" class="ank.hao.beans.bean.PrototypeBean" scope="prototype"/>
+
+    <bean class="ank.hao.beans.bean.LifeCycleBean" init-method="custom_init" destroy-method="custom_destory"/>
+
+    <bean class="ank.hao.beans.MyBeanFactoryPostProcessor"/>
+
+    <bean class="ank.hao.beans.MyFactoryBean"/>
+
+    <bean class="ank.hao.beans.MyBeanPostProcessor"/>
 </beans>

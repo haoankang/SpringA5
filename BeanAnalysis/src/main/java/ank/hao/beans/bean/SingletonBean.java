@@ -1,10 +1,15 @@
 package ank.hao.beans.bean;
 
-public class SingletonBean {
+public abstract class SingletonBean {
 
-    private PrototypeBean prototypeBean;
+    public void say(){
 
-    public void setPrototypeBean(PrototypeBean prototypeBean){
-        this.prototypeBean = prototypeBean;
+        createPrototypeBean().ddd();
     }
+
+//    public void setPrototypeBean(PrototypeBean prototypeBean){
+//        this.prototypeBean = prototypeBean;
+//    }
+
+    public abstract PrototypeBean createPrototypeBean();
 }
