@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class Wang implements Tenant {
     @Override
     public void rent(String renter) {
-        System.out.println(renter + "rent the house");
+        System.out.println(renter + " rent the house");
     }
 }

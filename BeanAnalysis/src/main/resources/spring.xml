@@ -7,6 +7,7 @@
     </context:annotation-config>
 
     <bean class="ank.hao.beans.MyConfig"/>
+    <bean class="ank.hao.config.MyConfig"/>
 
     <!--<bean id="testBean" class="ank.hao.beans.bean.TestBean" scope="singleton" name="testBean2" abstract="false" destroy-method="destory" init-method="say">-->
         <!--<constructor-arg value="aaa"/>-->
@@ -50,4 +51,6 @@
     <bean class="ank.hao.beans.MyFactoryBean"/>
 
     <bean class="ank.hao.beans.MyBeanPostProcessor"/>
+
+    <!--<bean class="ank.hao.aware.ResourceAware"/>-->
 </beans>

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class AopProxy {
 
     @Pointcut("execution(* ank.hao.spring_aop.Tenant.rent(..))")
-    public void rent(){};
+    public void rent(){}
 
     @Around("rent()")
     public Object rentProxy(ProceedingJoinPoint proceedingJoinPoint) throws Throwable{

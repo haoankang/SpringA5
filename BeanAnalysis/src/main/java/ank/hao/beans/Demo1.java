@@ -22,7 +22,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Demo1 {
 
 
-    public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args) {
 //        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 //        Resource resource = new ClassPathResource("spring.xml");
 //        //Resource resource = new UrlResource("https://github.com/haoankang/SpringA5/blob/master/BeanAnalysis/src/main/resources/spring.xml");

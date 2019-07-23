@@ -14,7 +14,7 @@ public class LifeCycleBean implements InitializingBean, DisposableBean {
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         System.out.println("afterPropertiesSet do..");
     }
 
@@ -28,7 +28,7 @@ public class LifeCycleBean implements InitializingBean, DisposableBean {
     }
 
     @Override
-    public void destroy() throws Exception {
+    public void destroy() {
         System.out.println("destory..");
     }
 

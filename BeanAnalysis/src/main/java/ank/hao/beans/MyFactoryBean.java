@@ -4,7 +4,7 @@ import org.springframework.beans.factory.FactoryBean;
 
 public class MyFactoryBean implements FactoryBean<String> {
     @Override
-    public String getObject() throws Exception {
+    public String getObject() {
         return new String("kaka");
     }
 
